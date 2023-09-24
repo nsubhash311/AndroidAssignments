@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">AndroidAssignments</string>
+    <string name="app_name">வணக்கம் டா மாப்பிள்ளை</string>
     <string name="hello_message">வணக்கம்!</string>
-    <string name="ButtonText">I\’m a button</string>
-    <string name="LoginText">Login</string>
-    <string name="LoginNameText">Login Name</string>
+    <string name="ButtonText">நான் ஒரு பட்டன்</string>
+    <string name="Login">உள்நுழைய</string>
+    <string name="LoginName">உள்நுழைவு பெயர்</string>
+    <string name="Password">கடவுச்சொல்</string>
+    <string name="passwordplaceholder">கடவுச்சொல்லை உள்ளிடவும்</string>
+    <string name="RadioButton">ரேடியோ பட்டன்</string>
+    <string name="CheckBox">தேர்வுப்பெட்டி</string>
+    <string name="Whatdoesthisdo">இது என்ன செய்கிறது</string>
+
+
 </resources>
