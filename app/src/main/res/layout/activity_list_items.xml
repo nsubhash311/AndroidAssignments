@@ -14,6 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_columnWeight="1"
+        android:layout_gravity="fill"
         android:text="@string/RadioButton" />
 
     <CheckBox
@@ -21,6 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_columnWeight="1"
+        android:layout_gravity="fill"
         android:text="@string/CheckBox" />
 
     <Switch
@@ -28,6 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_columnWeight="1"
+        android:layout_gravity="fill"
         android:text="@string/Whatdoesthisdo" />
 
     <ImageButton
@@ -35,5 +38,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_columnWeight="1"
+        android:layout_gravity="fill"
         android:src="@android:drawable/ic_menu_camera" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:text="@string/backtohomee"
+        android:textColorHighlight="#2E9FF8"
+        android:textColorLink="#0EAAF1" />
 </GridLayout>

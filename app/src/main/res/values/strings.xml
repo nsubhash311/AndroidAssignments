@@ -9,4 +9,9 @@
     <string name="RadioButton">Radio</string>
     <string name="CheckBox">Check</string>
     <string name="Whatdoesthisdo">What does this</string>
+    <string name="ListItemsButton">List Items</string>
+    <string name="Click_Login">Click to Login</string>
+    <string name="backtohome">Back to Home</string>
+    <string name="backtohomee">Back to Home</string>
+
 </resources>

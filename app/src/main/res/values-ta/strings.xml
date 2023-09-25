@@ -10,6 +10,10 @@
     <string name="RadioButton">ரேடியோ பட்டன்</string>
     <string name="CheckBox">தேர்வுப்பெட்டி</string>
     <string name="Whatdoesthisdo">இது என்ன செய்கிறது</string>
+    <string name="ListItemsButton">தேவையான பொருட்கள்</string>
+    <string name="Click_Login">உள்ளே நுழைய</string>
+    <string name="backtohome">வெளியே போ</string>
+    <string name="backtohomee">வெளியே போ</string>
 
 
 </resources>
