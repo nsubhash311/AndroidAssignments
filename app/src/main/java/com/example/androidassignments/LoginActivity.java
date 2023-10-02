@@ -9,9 +9,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+import android.util.Patterns;
 
 public class LoginActivity extends AppCompatActivity {
     Button b3;
+    String Tag ="LoginActivityTag";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,12 +29,23 @@ public class LoginActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        String eMail = ((EditText)findViewById(R.id.editTextText)).getText().toString();
+                        String eMail = ((EditText) findViewById(R.id.editTextText)).getText().toString();
+                        String password = ((EditText) findViewById(R.id.editTextText3)).getText().toString();
                         SharedPreferences.Editor editor = sharedPreferences.edit();
                         editor.putString("DefaultEmail", eMail);
                         editor.apply();
-                        Intent i = new Intent(LoginActivity.this,MainActivity.class);
-                        startActivity(i);
+                        if ((!eMail.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(eMail).matches()) && (!password.isEmpty())) {
+
+//                            Log.d(Tag,"shhjh");
+//                            if(!password.isEmpty()){
+//                                Log.d(Tag,password);
+                            Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                            Intent i = new Intent(LoginActivity.this, MainActivity.class);
+                            startActivity(i);
+                        } else {
+                            Toast.makeText(LoginActivity.this, "Enter valid credentials", Toast.LENGTH_SHORT).show();
+                        }
+
                     }
                 }
         );

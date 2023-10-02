@@ -1,11 +1,15 @@
 package com.example.androidassignments;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import android.app.Activity;
 import android.content.Intent;
+import android.os.PersistableBundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.widget.Toast;
 import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
@@ -35,12 +39,28 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         Intent i = new Intent(MainActivity.this,ListItemsActivity.class);
-                        startActivity(i);
+                        startActivityForResult(i, 10);
                     }
                 }
         );
 
     }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == 10){
+            // Toast.makeText(MainActivity.this, "I've come here!!", Toast.LENGTH_SHORT).show();
+            Log.i("ListItemsActivity","Returned to MainActivity.onActivityResult");
+
+        }
+
+        if(resultCode == Activity.RESULT_OK){
+            Toast.makeText(MainActivity.this, (String)data.getExtras().get("Response"), Toast.LENGTH_SHORT).show();
+
+        }
+    }
+
+
     protected  void onResume() {
         super.onResume();
         Log.i("Resume", "Calling OnResume function");
@@ -64,10 +84,15 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
         Log.i("Destroy", "Calling OnDestroy function");
     }
-    protected  void onSaveInstanceState(){
-        Log.i("SaveInstanceState()","Calling OnSaveInstanceState function");
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState, @NonNull PersistableBundle outPersistentState) {
+        Log.i("SaveInstanceState", "Calling onSaveInstanceState function");
+        super.onSaveInstanceState(outState, outPersistentState);
     }
-    protected void onRestoreInstanceState(){
-        Log.i("RestoreInstanceState", "Calling RestoreInstanceState function");
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        Log.i("RestoreInstanceState", "Calling onRestoreInstanceState function");
+        super.onRestoreInstanceState(savedInstanceState);
     }
 }

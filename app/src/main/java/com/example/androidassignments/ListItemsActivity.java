@@ -1,29 +1,106 @@
 package com.example.androidassignments;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.ImageButton;
+import android.widget.Switch;
+import android.widget.Toast;
+
 
 public class ListItemsActivity extends AppCompatActivity {
     Button b5;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_items);
-        b5 = findViewById(R.id.button5);
-        b5.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent i = new Intent(ListItemsActivity.this,MainActivity.class);
-                        startActivity(i);
-                    }
+        ImageButton upload = (ImageButton) findViewById(R.id.imageButton);
+        Switch Toggle = (Switch) findViewById((R.id.switch1));
+        CheckBox ch = (CheckBox) findViewById(R.id.checkBox);
+
+        upload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent camera = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(camera, 00);
+            }
+        });
+//        b5 = findViewById(R.id.button5);
+//        b5.setOnClickListener(
+//                new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                        Intent i = new Intent(ListItemsActivity.this,MainActivity.class);
+//                        startActivity(i);
+//                    }
+//                }
+//        );
+
+//        Toggle.setOnCheckedChangeListener(
+    Toggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        @Override
+        public void onCheckedChanged(CompoundButton compoundButton, boolean c) {
+            if (c) {
+                Toast.makeText(ListItemsActivity.this, "It's ON", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(ListItemsActivity.this, "It's OFF", Toast.LENGTH_SHORT).show();
+            }
+        }
+    });
+
+
+        ch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean c) {
+                if (c) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(ListItemsActivity.this);
+                    builder.setMessage("Are you sure you want to close ?")
+                            .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+//                                    Toast.makeText(ListItemsActivity.this, "It is ON", Toast.LENGTH_SHORT).show();
+                                    Intent resultIntent = new Intent();
+                                    resultIntent.putExtra("@string/Response", "Here is my response");
+                                    setResult(Activity.RESULT_OK, resultIntent);
+                                    finish();
+                                }
+                            }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    compoundButton.setChecked(false);
+                                    dialog.cancel();
+                                }
+                            });
+                    AlertDialog alertDialog = builder.create();
+                    alertDialog.show();
                 }
-        );
+    }
+    });
+}
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 00) {
+            Bitmap image = (Bitmap) data.getExtras().get("data");
+            ImageButton upload = (ImageButton) findViewById(R.id.imageButton);
+            upload.setImageBitmap(image);
+        }
+    }
+    void print (String message){
+        Toast t = Toast.makeText(ListItemsActivity.this, message, Toast.LENGTH_SHORT);
+        t.show();
     }
 
     protected  void onResume() {
@@ -49,10 +126,16 @@ public class ListItemsActivity extends AppCompatActivity {
         super.onDestroy();
         Log.i("Destroy", "Calling OnDestroy function");
     }
-    protected  void onSaveInstanceState(){
-        Log.i("SaveInstanceState()","Calling OnSaveInstanceState function");
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState, @NonNull PersistableBundle outPersistentState) {
+        Log.i("SaveInstanceState", "Calling onSaveInstanceState function");
+        super.onSaveInstanceState(outState, outPersistentState);
     }
-    protected void onRestoreInstanceState(){
-        Log.i("RestoreInstanceState", "Calling RestoreInstanceState function");
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        Log.i("RestoreInstanceState", "Calling onRestoreInstanceState function");
+        super.onRestoreInstanceState(savedInstanceState);
     }
+
 }
