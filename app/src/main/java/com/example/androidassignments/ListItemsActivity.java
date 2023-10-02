@@ -72,7 +72,7 @@ public class ListItemsActivity extends AppCompatActivity {
                                 public void onClick(DialogInterface dialog, int id) {
 //                                    Toast.makeText(ListItemsActivity.this, "It is ON", Toast.LENGTH_SHORT).show();
                                     Intent resultIntent = new Intent();
-                                    resultIntent.putExtra("@string/Response", "Here is my response");
+                                    resultIntent.putExtra("Response", "Here's my response");
                                     setResult(Activity.RESULT_OK, resultIntent);
                                     finish();
                                 }
