@@ -54,9 +54,11 @@ public class ListItemsActivity extends AppCompatActivity {
         @Override
         public void onCheckedChanged(CompoundButton compoundButton, boolean c) {
             if (c) {
-                Toast.makeText(ListItemsActivity.this, "It's ON", Toast.LENGTH_SHORT).show();
+                String text3 = getResources().getString(R.string.itson);
+                Toast.makeText(ListItemsActivity.this, text3, Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(ListItemsActivity.this, "It's OFF", Toast.LENGTH_SHORT).show();
+                String text4 = getResources().getString(R.string.itsoff);
+                Toast.makeText(ListItemsActivity.this, text4, Toast.LENGTH_SHORT).show();
             }
         }
     });
@@ -67,16 +69,19 @@ public class ListItemsActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton compoundButton, boolean c) {
                 if (c) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(ListItemsActivity.this);
-                    builder.setMessage("Are you sure you want to close ?")
-                            .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    String text5 = getResources().getString(R.string.areusure);
+                    builder.setMessage(text5)
+                            .setPositiveButton((getResources().getString(R.string.yes)), new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
 //                                    Toast.makeText(ListItemsActivity.this, "It is ON", Toast.LENGTH_SHORT).show();
                                     Intent resultIntent = new Intent();
-                                    resultIntent.putExtra("Response", "Here's my response");
+                                    String text6 = getResources().getString(R.string.response);
+
+                                    resultIntent.putExtra("Response", text6);
                                     setResult(Activity.RESULT_OK, resultIntent);
                                     finish();
                                 }
-                            }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                            }).setNegativeButton((getResources().getString(R.string.no)), new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
                                     compoundButton.setChecked(false);
                                     dialog.cancel();

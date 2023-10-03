@@ -15,4 +15,14 @@
     <string name="backtohome">வெளியே போ</string>
     <string name="backtohomee">வெளியே போ</string>
 
+    <string name="loginsuccessful">உள்நுழைவு வெற்றி</string>
+    <string name="notvalid">செல்லுபடியாகாது</string>
+    <string name="itson">திறந்த வெளி</string>
+    <string name="itsoff">மூடப்பட்டது</string>
+    <string name="areusure">நீங்கள் உறுதியாக உள்ளீர்களா</string>
+    <string name="response">வணக்கம்டா மாப்ள </string>
+    <string name="yes">சரி</string>
+    <string name="no">இல்லை</string>
+
+
 </resources>

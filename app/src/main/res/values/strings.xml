@@ -14,5 +14,14 @@
     <string name="backtohome">Back to Home</string>
     <string name="backtohomee">Back to Home</string>
 
+    <string name="loginsuccessful">Login Successful</string>
+    <string name="notvalid">Enter valid Credentials</string>
+    <string name="itson">It is On</string>
+    <string name="itsoff">It is Off</string>
+    <string name="areusure">Are You Sure You want to close?</string>
+    <string name="response">ListItemsActivity passed: My information to share</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
 
 </resources>

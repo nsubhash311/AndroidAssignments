@@ -39,11 +39,13 @@ public class LoginActivity extends AppCompatActivity {
 //                            Log.d(Tag,"shhjh");
 //                            if(!password.isEmpty()){
 //                                Log.d(Tag,password);
-                            Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                            String text = getResources().getString(R.string.loginsuccessful);
+                            Toast.makeText(LoginActivity.this, text, Toast.LENGTH_SHORT).show();
                             Intent i = new Intent(LoginActivity.this, MainActivity.class);
                             startActivity(i);
                         } else {
-                            Toast.makeText(LoginActivity.this, "Enter valid credentials", Toast.LENGTH_SHORT).show();
+                            String text2 = getResources().getString(R.string.notvalid);
+                            Toast.makeText(LoginActivity.this, text2, Toast.LENGTH_SHORT).show();
                         }
 
                     }
