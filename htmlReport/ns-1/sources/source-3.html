@@ -1,0 +1,215 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > LoginActivity</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.androidassignments</a>
+</div>
+
+<h1>Coverage Summary for Class: LoginActivity (com.example.androidassignments)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">LoginActivity</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/9)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/24)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">LoginActivity$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/14)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/11)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/38)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.androidassignments;
+&nbsp;
+&nbsp;import androidx.appcompat.app.AppCompatActivity;
+&nbsp;
+&nbsp;import android.content.Intent;
+&nbsp;import android.content.SharedPreferences;
+&nbsp;import android.os.Bundle;
+&nbsp;import android.util.Log;
+&nbsp;import android.view.View;
+&nbsp;import android.widget.Button;
+&nbsp;import android.widget.EditText;
+&nbsp;import android.widget.Toast;
+&nbsp;import android.util.Patterns;
+&nbsp;
+<b class="nc">&nbsp;public class LoginActivity extends AppCompatActivity {</b>
+&nbsp;    Button b3;
+<b class="nc">&nbsp;    String Tag =&quot;LoginActivityTag&quot;;</b>
+&nbsp;    @Override
+&nbsp;    protected void onCreate(Bundle savedInstanceState) {
+<b class="nc">&nbsp;        super.onCreate(savedInstanceState);</b>
+<b class="nc">&nbsp;        setContentView(R.layout.activity_login);</b>
+<b class="nc">&nbsp;        b3 = findViewById(R.id.button);</b>
+&nbsp;        SharedPreferences sharedPreferences;
+<b class="nc">&nbsp;        sharedPreferences = getSharedPreferences(&quot;preferences&quot;, MODE_PRIVATE);</b>
+<b class="nc">&nbsp;        String defaultEmail = sharedPreferences.getString(&quot;DefaultEmail&quot;,&quot;email@domain.com&quot;);</b>
+<b class="nc">&nbsp;        EditText text = findViewById(R.id.editTextText);</b>
+<b class="nc">&nbsp;        text.setText(defaultEmail);</b>
+<b class="nc">&nbsp;        b3.setOnClickListener(</b>
+<b class="nc">&nbsp;                new View.OnClickListener() {</b>
+&nbsp;                    @Override
+&nbsp;                    public void onClick(View v) {
+<b class="nc">&nbsp;                        String eMail = ((EditText) findViewById(R.id.editTextText)).getText().toString();</b>
+<b class="nc">&nbsp;                        String password = ((EditText) findViewById(R.id.editTextText3)).getText().toString();</b>
+<b class="nc">&nbsp;                        SharedPreferences.Editor editor = sharedPreferences.edit();</b>
+<b class="nc">&nbsp;                        editor.putString(&quot;DefaultEmail&quot;, eMail);</b>
+<b class="nc">&nbsp;                        editor.apply();</b>
+<b class="nc">&nbsp;                        if ((!eMail.isEmpty() &amp;&amp; Patterns.EMAIL_ADDRESS.matcher(eMail).matches()) &amp;&amp; (!password.isEmpty())) {</b>
+&nbsp;
+&nbsp;//                            Log.d(Tag,&quot;shhjh&quot;);
+&nbsp;//                            if(!password.isEmpty()){
+&nbsp;//                                Log.d(Tag,password);
+<b class="nc">&nbsp;                            String text = getResources().getString(R.string.loginsuccessful);</b>
+<b class="nc">&nbsp;                            Toast.makeText(LoginActivity.this, text, Toast.LENGTH_SHORT).show();</b>
+<b class="nc">&nbsp;                            Intent i = new Intent(LoginActivity.this, MainActivity.class);</b>
+<b class="nc">&nbsp;                            startActivity(i);</b>
+<b class="nc">&nbsp;                        } else {</b>
+<b class="nc">&nbsp;                            String text2 = getResources().getString(R.string.notvalid);</b>
+<b class="nc">&nbsp;                            Toast.makeText(LoginActivity.this, text2, Toast.LENGTH_SHORT).show();</b>
+&nbsp;                        }
+&nbsp;
+&nbsp;                    }
+&nbsp;                }
+&nbsp;        );
+&nbsp;    }
+&nbsp;    protected  void onResume() {
+<b class="nc">&nbsp;        super.onResume();</b>
+<b class="nc">&nbsp;        Log.i(&quot;Resume&quot;, &quot;Calling OnResume function&quot;);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    protected  void onStart() {
+<b class="nc">&nbsp;        super.onStart();</b>
+<b class="nc">&nbsp;        Log.i(&quot;Start&quot;, &quot;Calling OnStart function&quot;);</b>
+&nbsp;
+&nbsp;    }
+&nbsp;    protected  void onPause() {
+<b class="nc">&nbsp;        super.onPause();</b>
+<b class="nc">&nbsp;        Log.i(&quot;Pause&quot;, &quot;Calling OnPause function&quot;);</b>
+&nbsp;
+&nbsp;    }
+&nbsp;    protected  void onStop() {
+<b class="nc">&nbsp;        super.onStop();</b>
+<b class="nc">&nbsp;        Log.i(&quot;Stop&quot;, &quot;Calling OnStop function&quot;);</b>
+&nbsp;
+&nbsp;    }protected  void onDestroy() {
+<b class="nc">&nbsp;        super.onDestroy();</b>
+<b class="nc">&nbsp;        Log.i(&quot;Destroy&quot;, &quot;Calling OnDestroy function&quot;);</b>
+&nbsp;    }
+&nbsp;    protected  void onSaveInstanceState(Bundle savedInstanceState) {
+<b class="nc">&nbsp;        super.onSaveInstanceState(savedInstanceState);</b>
+<b class="nc">&nbsp;        Log.i(&quot;SaveInstanceState()&quot;, &quot;Calling OnSaveInstanceState function&quot;);</b>
+&nbsp;    }
+&nbsp;    protected void onRestoreInstanceState(Bundle savedInstanceState){
+<b class="nc">&nbsp;        super.onRestoreInstanceState(savedInstanceState);</b>
+<b class="nc">&nbsp;        Log.i(&quot;RestoreInstanceState&quot;, &quot;Calling RestoreInstanceState function&quot;);</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-10-09 21:31</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,247 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > ChatWindow</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.androidassignments</a>
+</div>
+
+<h1>Coverage Summary for Class: ChatWindow (com.example.androidassignments)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ChatWindow</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/10)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">ChatWindow$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/6)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">ChatWindow$ChatAdapter</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/11)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/8)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/27)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.androidassignments;
+&nbsp;
+&nbsp;import androidx.appcompat.app.AppCompatActivity;
+&nbsp;
+&nbsp;import android.annotation.SuppressLint;
+&nbsp;import android.os.Bundle;
+&nbsp;import android.view.LayoutInflater;
+&nbsp;import android.view.View;
+&nbsp;import android.view.ViewGroup;
+&nbsp;import android.widget.Button;
+&nbsp;import android.widget.EditText;
+&nbsp;import android.widget.ListView;
+&nbsp;import android.widget.ArrayAdapter;
+&nbsp;import android.content.Context;
+&nbsp;import android.widget.TextView;
+&nbsp;
+&nbsp;import java.util.ArrayList;
+&nbsp;
+<b class="nc">&nbsp;public class ChatWindow extends AppCompatActivity {</b>
+&nbsp;
+&nbsp;    private EditText chatEditText;
+&nbsp;    private Button sendButton;
+&nbsp;    private ListView chatListView;
+&nbsp;    private ArrayList&lt;String&gt; chatMessages;
+&nbsp;    private ChatAdapter chatAdapter;
+&nbsp;
+&nbsp;    @Override
+&nbsp;    protected void onCreate(Bundle savedInstanceState) {
+<b class="nc">&nbsp;        super.onCreate(savedInstanceState);</b>
+<b class="nc">&nbsp;        setContentView(R.layout.activity_chat_window);</b>
+&nbsp;
+&nbsp;        // Initialize UI elements
+<b class="nc">&nbsp;        chatEditText = findViewById(R.id.chatEditText);</b>
+<b class="nc">&nbsp;        sendButton = findViewById(R.id.sendButton);</b>
+<b class="nc">&nbsp;        chatListView = findViewById(R.id.chatListView);</b>
+&nbsp;
+&nbsp;        // Initialize chatMessages ArrayList and ChatAdapter
+<b class="nc">&nbsp;        chatMessages = new ArrayList&lt;&gt;();</b>
+<b class="nc">&nbsp;        chatAdapter = new ChatAdapter(this);</b>
+<b class="nc">&nbsp;        chatListView.setAdapter(chatAdapter);</b>
+&nbsp;
+&nbsp;//        ChatAdapter messageAdapter =new ChatAdapter( this );
+&nbsp;//        chatListView.setAdapter (messageAdapter);
+&nbsp;
+<b class="nc">&nbsp;        sendButton.setOnClickListener(new View.OnClickListener() {</b>
+&nbsp;            @Override
+&nbsp;            public void onClick(View view) {
+&nbsp;                // Get text from EditText
+<b class="nc">&nbsp;                String message = chatEditText.getText().toString().trim();</b>
+&nbsp;
+&nbsp;                // Add message to the chatMessages ArrayList
+<b class="nc">&nbsp;                if (!message.isEmpty()) {</b>
+<b class="nc">&nbsp;                    chatMessages.add(message);</b>
+<b class="nc">&nbsp;                    chatAdapter.notifyDataSetChanged(); // Update the ListView</b>
+<b class="nc">&nbsp;                    chatEditText.setText(&quot;&quot;); // Clear EditText</b>
+&nbsp;                }
+&nbsp;            }
+&nbsp;        });
+&nbsp;    }
+&nbsp;
+&nbsp;    // Inner class for the ChatAdapter
+&nbsp;    private class ChatAdapter extends ArrayAdapter&lt;String&gt; {
+&nbsp;
+<b class="nc">&nbsp;        public ChatAdapter(Context ctx) {</b>
+<b class="nc">&nbsp;            super(ctx, 0);</b>
+&nbsp;        }
+&nbsp;
+&nbsp;        @Override
+&nbsp;        public int getCount() {
+<b class="nc">&nbsp;            return chatMessages.size();</b>
+&nbsp;        }
+&nbsp;
+&nbsp;        @Override
+&nbsp;        public String getItem(int position) {
+<b class="nc">&nbsp;            return chatMessages.get(position);</b>
+&nbsp;        }
+&nbsp;
+&nbsp;        @SuppressLint(&quot;InflateParams&quot;)
+&nbsp;        @Override
+&nbsp;        public View getView(int position, View convertView, ViewGroup parent) {
+<b class="nc">&nbsp;            LayoutInflater inflater = ChatWindow.this.getLayoutInflater();</b>
+&nbsp;            View result;
+&nbsp;
+<b class="nc">&nbsp;            if (position % 2 == 0) {</b>
+&nbsp;                // For even positions (incoming messages)
+<b class="nc">&nbsp;                result = inflater.inflate(R.layout.chat_row_incoming, null);</b>
+&nbsp;            } else {
+&nbsp;                // For odd positions (outgoing messages)
+<b class="nc">&nbsp;                result = inflater.inflate(R.layout.chat_row_outgoing, null);</b>
+&nbsp;            }
+&nbsp;
+&nbsp;            // Get the TextView which holds the message
+<b class="nc">&nbsp;            TextView messageTextView = result.findViewById(R.id.message_text);</b>
+<b class="nc">&nbsp;            messageTextView.setText(getItem(position)); // Set the chat message text</b>
+&nbsp;
+<b class="nc">&nbsp;            return result;</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-10-09 21:31</div>
+</div>
+</body>
+</html>
