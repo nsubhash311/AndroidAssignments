@@ -1,0 +1,17 @@
+@startuml
+package com.example.androidassignments {
+    class MainActivity {
+        - Button b1
+        - Button b2
+        + void onCreate(Bundle savedInstanceState)
+        + void onActivityResult(int requestCode, int resultCode, @Nullable Intent data)
+        + void onResume()
+        + void onStart()
+        + void onPause()
+        + void onStop()
+        + void onDestroy()
+        + void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState)
+        + void onRestoreInstanceState(Bundle savedInstanceState)
+    }
+}
+@enduml

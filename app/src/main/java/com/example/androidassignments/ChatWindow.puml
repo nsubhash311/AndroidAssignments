@@ -1,0 +1,18 @@
+@startuml
+package com.example.androidassignments {
+    class ChatWindow {
+        - EditText chatEditText
+        - Button sendButton
+        - ListView chatListView
+        - ArrayList<String> chatMessages
+        - ChatAdapter chatAdapter
+        + void onCreate(Bundle savedInstanceState)
+`    }
+`    class ChatAdapter {
+        + ChatAdapter(Context ctx)
+        + int getCount()
+        + String getItem(int position)
+        + View getView(int position, View convertView, ViewGroup parent)
+    }
+}
+@enduml

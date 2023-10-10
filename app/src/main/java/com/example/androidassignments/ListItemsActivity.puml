@@ -1,0 +1,16 @@
+@startuml
+class ListItemsActivity {
+    - Button b5
+    .. Constructors ..
+    + void onCreate(Bundle savedInstanceState)
+    + void onActivityResult(int requestCode, int resultCode, Intent data)
+    + void print(String message)
+    + void onResume()
+    + void onStart()
+    + void onPause()
+    + void onStop()
+    + void onDestroy()
+    + void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState)
+    + void onRestoreInstanceState(Bundle savedInstanceState)
+}
+@enduml

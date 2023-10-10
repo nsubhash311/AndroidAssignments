@@ -1,0 +1,16 @@
+@startuml
+package com.example.androidassignments {
+    class LoginActivity {
+        - Button b3
+        - String Tag
+        + void onCreate(Bundle savedInstanceState)
+        + void onResume()
+        + void onStart()
+        + void onPause()
+        + void onStop()
+        + void onDestroy()
+        + void onSaveInstanceState(Bundle savedInstanceState)
+        + void onRestoreInstanceState(Bundle savedInstanceState)
+    }
+}
+@enduml
