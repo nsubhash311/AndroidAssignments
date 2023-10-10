@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     Button b2;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +41,17 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View v) {
                         Intent i = new Intent(MainActivity.this,ListItemsActivity.class);
                         startActivityForResult(i, 10);
+                    }
+                }
+        );
+        Button button4 = findViewById(R.id.button4);
+        button4.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Log.i("MainActivity", "User clicked Start Chat");
+
+                        Intent intent = new Intent(MainActivity.this, ChatWindow.class);
+                        startActivity(intent);
                     }
                 }
         );

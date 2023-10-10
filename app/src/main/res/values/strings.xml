@@ -13,6 +13,10 @@
     <string name="Click_Login">Click to Login</string>
     <string name="backtohome">Back to Home</string>
     <string name="backtohomee">Back to Home</string>
+    <string name="StartChat">Start Chat</string>
+    <string name="SendBtn">Send</string>
+    <string name="StartChatBtn">Start Chat</string>
+
 
     <string name="loginsuccessful">Login Successful</string>
     <string name="notvalid">Enter valid Credentials</string>
