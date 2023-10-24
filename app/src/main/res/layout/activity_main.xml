@@ -7,7 +7,6 @@
     tools:context=".MainActivity">
 
 
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -20,35 +19,51 @@
 
     <Button
         android:id="@+id/button1"
+        style="@style/AppButtonBeauty"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="8dp"
         android:text="@string/ButtonText"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.44"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/button2"
+        style="@style/AppButtonBeauty"
         android:layout_width="149dp"
         android:layout_height="46dp"
-        android:layout_marginStart="124dp"
-        android:layout_marginTop="476dp"
+        android:layout_marginStart="144dp"
         android:layout_marginBottom="33dp"
         android:text="@string/ListItemsButton"
         app:layout_constraintBottom_toTopOf="@+id/button4"
+        app:layout_constraintEnd_toEndOf="@+id/button6"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/button6" />
 
     <Button
         android:id="@+id/button4"
+        style="@style/AppButtonBeauty"
         android:layout_width="118dp"
         android:layout_height="48dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="114dp"
         android:text="@string/StartChatBtn"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.447"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+    <Button
+        android:id="@+id/button6"
+        style="@style/AppButtonBeauty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/TestToolBar"
+        tools:layout_editor_absoluteX="138dp"
+        tools:layout_editor_absoluteY="459dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

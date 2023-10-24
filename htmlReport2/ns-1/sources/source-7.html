@@ -1,0 +1,374 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > TestToolbar</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.androidassignments</a>
+</div>
+
+<h1>Coverage Summary for Class: TestToolbar (com.example.androidassignments)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">TestToolbar</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/40)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">TestToolbar$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">TestToolbar$2</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">TestToolbar$3</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">TestToolbar$4</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">TestToolbar$5</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/14)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/50)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.androidassignments;
+&nbsp;
+&nbsp;import static com.example.androidassignments.R.id.editTextMessage;
+&nbsp;
+&nbsp;import android.app.Activity;
+&nbsp;import android.app.AlertDialog;
+&nbsp;import android.content.DialogInterface;
+&nbsp;import android.content.Intent;
+&nbsp;import android.os.Bundle;
+&nbsp;import androidx.appcompat.widget.Toolbar;
+&nbsp;
+&nbsp;import com.google.android.material.snackbar.Snackbar;
+&nbsp;import com.google.android.material.floatingactionbutton.FloatingActionButton;
+&nbsp;
+&nbsp;import androidx.annotation.NonNull;
+&nbsp;import androidx.appcompat.app.AppCompatActivity;
+&nbsp;
+&nbsp;import android.util.Log;
+&nbsp;import android.view.Menu;
+&nbsp;import android.view.MenuItem;
+&nbsp;import android.view.View;
+&nbsp;import android.widget.EditText;
+&nbsp;import android.widget.Toast;
+&nbsp;
+&nbsp;import androidx.core.view.WindowCompat;
+&nbsp;import androidx.navigation.NavController;
+&nbsp;import androidx.navigation.Navigation;
+&nbsp;import androidx.navigation.ui.AppBarConfiguration;
+&nbsp;import androidx.navigation.ui.NavigationUI;
+&nbsp;
+&nbsp;import com.example.androidassignments.databinding.ActivityTestToolbarBinding;
+&nbsp;
+<b class="nc">&nbsp;public class TestToolbar extends AppCompatActivity {</b>
+&nbsp;
+&nbsp;    private AppBarConfiguration appBarConfiguration;
+&nbsp;    private ActivityTestToolbarBinding binding;
+&nbsp;
+&nbsp;    private String msg;
+&nbsp;
+&nbsp;    @Override
+&nbsp;    protected void onCreate(Bundle savedInstanceState) {
+<b class="nc">&nbsp;        super.onCreate(savedInstanceState);</b>
+<b class="nc">&nbsp;        setContentView(R.layout.activity_test_toolbar);</b>
+<b class="nc">&nbsp;        Toolbar toolbar = findViewById(R.id.toolbar);</b>
+<b class="nc">&nbsp;        msg= &quot;You selected option 1&quot;;</b>
+<b class="nc">&nbsp;        setSupportActionBar(toolbar);</b>
+&nbsp;
+<b class="nc">&nbsp;        FloatingActionButton fab  = findViewById(R.id.fab);</b>
+&nbsp;
+<b class="nc">&nbsp;        fab.setOnClickListener(new View.OnClickListener() {</b>
+&nbsp;            @Override
+&nbsp;            public void onClick(View view) {
+<b class="nc">&nbsp;                Snackbar.make(view,&quot;Hello Guys, help me im floating&quot;,Snackbar.LENGTH_SHORT).show();</b>
+&nbsp;            }
+&nbsp;        });
+&nbsp;    }
+&nbsp;
+&nbsp;//        binding = ActivityTestToolbarBinding.inflate(getLayoutInflater());
+&nbsp;//        setContentView(binding.getRoot());
+&nbsp;//
+&nbsp;//        setSupportActionBar(binding.toolbar);
+&nbsp;//
+&nbsp;//        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_test_toolbar);
+&nbsp;//        appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
+&nbsp;//        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+&nbsp;//
+&nbsp;//        binding.fab.setOnClickListener(new View.OnClickListener() {
+&nbsp;//            @Override
+&nbsp;//            public void onClick(View view) {
+&nbsp;//                Snackbar.make(view, &quot;Replace with your own action&quot;, Snackbar.LENGTH_LONG)
+&nbsp;//                        .setAnchorView(R.id.fab)
+&nbsp;//                        .setAction(&quot;Action&quot;, null).show();
+&nbsp;//            }
+&nbsp;//        });
+&nbsp;//    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public boolean onCreateOptionsMenu(Menu menu) {
+<b class="nc">&nbsp;        getMenuInflater().inflate(R.menu.toolbar_menu, menu);</b>
+<b class="nc">&nbsp;        return true;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public boolean onOptionsItemSelected(MenuItem item) {
+<b class="nc">&nbsp;        int id = item.getItemId();</b>
+&nbsp;
+<b class="nc">&nbsp;        if (id == R.id.actionOne) {</b>
+<b class="nc">&nbsp;            Log.d(&quot;Toolbar&quot;, &quot;Option 1 selected&quot;);</b>
+<b class="nc">&nbsp;            View view = findViewById(R.id.actionOne);</b>
+<b class="nc">&nbsp;            Snackbar.make(view,msg,Snackbar.LENGTH_SHORT).show();</b>
+&nbsp;
+&nbsp;            // Handle action for Option 1
+<b class="nc">&nbsp;            return true; // We consumed the selection event</b>
+<b class="nc">&nbsp;        } else if (id == R.id.actionTwo) {</b>
+<b class="nc">&nbsp;            Log.d(&quot;Toolbar&quot;, &quot;Option 2 selected&quot;);</b>
+<b class="nc">&nbsp;            AlertDialog.Builder builder = new AlertDialog.Builder(this);</b>
+&nbsp;
+<b class="nc">&nbsp;            builder.setTitle(&quot;Do you want to go back?&quot;);</b>
+&nbsp;
+<b class="nc">&nbsp;            builder.setPositiveButton(&quot;Yes&quot;, new DialogInterface.OnClickListener() {</b>
+&nbsp;                @Override
+&nbsp;                public void onClick(DialogInterface dialog, int which) {
+<b class="nc">&nbsp;                    finish();</b>
+&nbsp;                }
+&nbsp;            });
+&nbsp;
+<b class="nc">&nbsp;            builder.setNegativeButton(&quot;No&quot;, new DialogInterface.OnClickListener() {</b>
+&nbsp;                @Override
+&nbsp;                public void onClick(DialogInterface dialog, int which) {
+<b class="nc">&nbsp;                    dialog.dismiss();</b>
+&nbsp;                }
+&nbsp;            });
+&nbsp;
+<b class="nc">&nbsp;            AlertDialog dialog = builder.create();</b>
+<b class="nc">&nbsp;            dialog.show();</b>
+&nbsp;
+&nbsp;            // Handle action for Option 2
+&nbsp;            // You can start an activity or perform any other action here
+<b class="nc">&nbsp;            return true;</b>
+<b class="nc">&nbsp;        } else if (id == R.id.actionThree) {</b>
+<b class="nc">&nbsp;            AlertDialog.Builder builder = new AlertDialog.Builder(this);</b>
+&nbsp;
+<b class="nc">&nbsp;            View dialogView = getLayoutInflater().inflate(R.layout.custom_dialog, null);</b>
+<b class="nc">&nbsp;            builder.setView(dialogView);</b>
+&nbsp;
+<b class="nc">&nbsp;            EditText editTextMessage = dialogView.findViewById(R.id.editTextMessage);</b>
+&nbsp;
+<b class="nc">&nbsp;            builder.setTitle(getResources().getString(R.string.type_your_message));</b>
+<b class="nc">&nbsp;            builder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {</b>
+&nbsp;                @Override
+&nbsp;                public void onClick(DialogInterface dialog, int which) {
+<b class="nc">&nbsp;                    msg = editTextMessage.getText().toString();</b>
+&nbsp;
+&nbsp;//                if (!message.isEmpty()) {
+&nbsp;//                    Snackbar.make(findViewById(android.R.id.content), message, Snackbar.LENGTH_SHORT).show();
+&nbsp;//                }
+&nbsp;                }
+&nbsp;            });
+&nbsp;
+<b class="nc">&nbsp;            builder.setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {</b>
+&nbsp;                @Override
+&nbsp;                public void onClick(DialogInterface dialog, int which) {
+<b class="nc">&nbsp;                    dialog.dismiss();</b>
+&nbsp;                }
+&nbsp;            });
+&nbsp;
+<b class="nc">&nbsp;            AlertDialog dialog = builder.create();</b>
+<b class="nc">&nbsp;            dialog.show();</b>
+&nbsp;
+&nbsp;            // Handle action for Option 3
+&nbsp;            // You can start another activity or perform any other action here
+<b class="nc">&nbsp;            return true;</b>
+<b class="nc">&nbsp;        } else if (id == R.id.actionAbout) {</b>
+<b class="nc">&nbsp;            Toast.makeText(this, &quot;Version 1.0,by Subhash&quot;, Toast.LENGTH_SHORT).show();</b>
+<b class="nc">&nbsp;            return true;</b>
+&nbsp;        } else {
+<b class="nc">&nbsp;            return super.onOptionsItemSelected(item);</b>
+&nbsp;        }
+&nbsp;
+&nbsp;    }
+&nbsp;}
+&nbsp;
+&nbsp;//    @Override
+&nbsp;//    public boolean onSupportNavigateUp() {
+&nbsp;//        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_test_toolbar);
+&nbsp;//        return NavigationUI.navigateUp(navController, appBarConfiguration)
+&nbsp;//                || super.onSupportNavigateUp();
+&nbsp;//    }
+&nbsp;//}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-10-23 18:40</div>
+</div>
+</body>
+</html>

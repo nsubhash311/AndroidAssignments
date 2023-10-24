@@ -28,5 +28,19 @@
     <string name="yes">சரி</string>
     <string name="no">இல்லை</string>
 
+    <string name="type_your_message">எழுது</string>
+    <string name="about">என்னை பற்றி</string>
+    <string name="Doyouwanttogback">நீ என்னை விட்டு செல்ல விரும்புகிறாயா?</string>
+    <string name="NewMess">புதிய செய்தி</string>
+    <string name="TestToolBar">சோதனை கருவி</string>
+    <string name="title_activity_test_toolbar">சோதனை கருவி</string>
+    <string name="versions">பதிப்பு 1.0, சுபாஷ்</string>
+    <string name="selections">நீங்கள் விருப்பம் 1 ஐ தேர்ந்தெடுத்துள்ளீர்கள்</string>
+    <string name="floating">வணக்கம் நண்பர்களே! நான் மிதக்கிறேன் எனக்கு உதவுங்கள்!!</string>
+
+
+
+
+
 
 </resources>

@@ -17,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
     Button b1;
     Button b2;
 
+    Button b6;
+
 
 
     @Override
@@ -52,6 +54,17 @@ public class MainActivity extends AppCompatActivity {
 
                         Intent intent = new Intent(MainActivity.this, ChatWindow.class);
                         startActivity(intent);
+                    }
+                }
+        );
+
+        b6 = findViewById(R.id.button6);
+        b6.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent i = new Intent(MainActivity.this, TestToolbar.class);
+                        startActivity(i);
                     }
                 }
         );
