@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button b6;
 
+    Button b7;
 
 
     @Override
@@ -64,6 +65,17 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         Intent i = new Intent(MainActivity.this, TestToolbar.class);
+                        startActivity(i);
+                    }
+                }
+        );
+
+        b7 = findViewById(R.id.button7);
+        b7.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent i = new Intent(MainActivity.this, WeatherForecast.class);
                         startActivity(i);
                     }
                 }

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="Cities">
+        <item>Ottawa</item>
+        <item>Waterloo</item>
+        <item>Toronto</item>
+        <item>Montreal</item>
+        <item>Windsor</item>
+        <item>Brampton</item>
+        <item>Mississauga</item>
+    </array>
+</resources>
